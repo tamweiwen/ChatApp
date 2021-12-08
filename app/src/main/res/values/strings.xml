@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="create_new_account"><u>Create New Account</u></string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="button_circle">Button Circle</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="log_in"><u>Return to Log In</u></string>
+    <string name="add_image">Add Image</string>
+    <string name="select_user">Select User</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="online">Online</string>
+</resources>

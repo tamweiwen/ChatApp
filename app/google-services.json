@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "266258363818",
+    "project_id": "messaging-app-b56eb",
+    "storage_bucket": "messaging-app-b56eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266258363818:android:8ab880994718401d16e7d3",
+        "android_client_info": {
+          "package_name": "com.infinityandroid.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266258363818-7mnv1arkg6fjubebutc27l03m8sv11ic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsAJjtDTTaDqbn6eqe686ELJux4jQZW-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266258363818-7mnv1arkg6fjubebutc27l03m8sv11ic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
