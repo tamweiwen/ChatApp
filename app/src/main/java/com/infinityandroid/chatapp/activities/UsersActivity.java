@@ -51,13 +51,15 @@ public class UsersActivity extends BaseActivity implements UserListener {
                            if(currentUserId.equals(queryDocumentSnapshot.getId())) {
                                continue;
                            }
-                           User user = new User();
-                           user.name = queryDocumentSnapshot.getString(Constants.KEY_NAME);
-                           user.email = queryDocumentSnapshot.getString(Constants.KEY_EMAIL);
-                           user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
-                           user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
-                           user.id = queryDocumentSnapshot.getId();
-                           users.add(user);
+                           if(queryDocumentSnapshot.getString(Constants.KEY_EMAIL_VERIFIED).equals("true")) {
+                               User user = new User();
+                               user.name = queryDocumentSnapshot.getString(Constants.KEY_NAME);
+                               user.email = queryDocumentSnapshot.getString(Constants.KEY_EMAIL);
+                               user.image = queryDocumentSnapshot.getString(Constants.KEY_IMAGE);
+                               user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
+                               user.id = queryDocumentSnapshot.getId();
+                               users.add(user);
+                           }
                        }
                        if(users.size() > 0) {
                            UsersAdapter usersAdapter = new UsersAdapter(users, this);
