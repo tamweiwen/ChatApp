@@ -1,4 +1,4 @@
-//UwU
+//WADUHEK
 
 package com.infinityandroid.chatapp.activities;
 
