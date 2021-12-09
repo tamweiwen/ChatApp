@@ -114,6 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
         String fullName = binding.inputFirstName.getText().toString() + " " + binding.inputLastName.getText().toString();
         user.put(Constants.KEY_NAME, fullName);
         user.put(Constants.KEY_EMAIL, binding.inputEmail.getText().toString());
+        user.put(Constants.KEY_EMAIL_VERIFIED, "false");
         //user.put(Constants.KEY_PASSWORD, binding.inputPassword.getText().toString());
         user.put(Constants.KEY_IMAGE, encodedImage);
         database.collection(Constants.KEY_COLLECTION_USERS)

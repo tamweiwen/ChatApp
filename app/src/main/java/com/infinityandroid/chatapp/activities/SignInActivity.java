@@ -12,6 +12,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.infinityandroid.chatapp.databinding.ActivitySignInBinding;
@@ -26,6 +27,7 @@ public class SignInActivity extends AppCompatActivity {
     private ActivitySignInBinding binding;
     private PreferenceManager preferenceManager;
     private FirebaseAuth firebaseAuth;
+    private DocumentReference documentReference;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +88,9 @@ public class SignInActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful() && task.getResult() != null
                     && task.getResult().getDocuments().size() > 0) {
+                        documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
+                                .document(preferenceManager.getString(Constants.KEY_USER_ID));
+                        documentReference.update(Constants.KEY_EMAIL_VERIFIED, "true");
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                         preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
