@@ -1,3 +1,5 @@
+//UwU
+
 package com.infinityandroid.chatapp.activities;
 
 import android.graphics.Bitmap;
