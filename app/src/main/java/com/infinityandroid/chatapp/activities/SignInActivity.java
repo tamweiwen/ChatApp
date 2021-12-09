@@ -88,9 +88,19 @@ public class SignInActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful() && task.getResult() != null
                     && task.getResult().getDocuments().size() > 0) {
-                        documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
-                                .document(preferenceManager.getString(Constants.KEY_USER_ID));
-                        documentReference.update(Constants.KEY_EMAIL_VERIFIED, "true");
+                        database.collection(Constants.KEY_COLLECTION_USERS)
+                                .whereEqualTo(Constants.KEY_EMAIL, binding.inputEmail.getText().toString())
+                                .whereEqualTo(Constants.KEY_EMAIL_VERIFIED, "false")
+                                .get()
+                                .addOnCompleteListener(task1 -> {
+                                    if(task1.isSuccessful() && task1.getResult() != null
+                                            && task1.getResult().getDocuments().size() > 0) {
+                                        documentReference = database.collection(Constants.KEY_COLLECTION_USERS)
+                                                .document(preferenceManager.getString(Constants.KEY_USER_ID));
+                                        documentReference.update(Constants.KEY_EMAIL_VERIFIED, "true");
+                                    }
+                                });
+
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                         preferenceManager.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
