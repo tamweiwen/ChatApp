@@ -36,7 +36,8 @@ public class MessagingService extends FirebaseMessagingService {
         user.name = remoteMessage.getData().get(Constants.KEY_NAME);
         user.token = remoteMessage.getData().get(Constants.KEY_FCM_TOKEN);
 
-        int notificationId = new Random().nextInt();
+        //int notificationId = new Random().nextInt();
+        int notificationId = 101;
         String channelId = "chat_message";
 
         Intent intent = new Intent(this, ChatActivity.class);
