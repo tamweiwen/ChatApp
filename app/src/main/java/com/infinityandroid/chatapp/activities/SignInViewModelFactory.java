@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-public final class SignInViewModelFactory implements ViewModelProvider.Factory {
+public class SignInViewModelFactory implements ViewModelProvider.Factory {
     String email;
 
     public SignInViewModelFactory(String email) {
