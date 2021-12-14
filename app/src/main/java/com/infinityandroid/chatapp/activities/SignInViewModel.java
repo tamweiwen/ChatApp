@@ -1,7 +1,5 @@
 package com.infinityandroid.chatapp.activities;
 
-import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -13,8 +11,6 @@ public class SignInViewModel extends ViewModel {
     public SignInViewModel(String email) {
         this.email = email;
         lastSignedIn = getLastSignedIn();
-        Log.i("SignInViewModel", "SignInViewModel created");
-        Log.i("SignInViewModel", lastSignedIn.getValue());
     }
 
     private MutableLiveData<String> _lastSignedIn;
@@ -36,7 +32,5 @@ public class SignInViewModel extends ViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
-        Log.i("SignInViewModel", "SignInViewModel destroyed");
-        Log.i("SignInViewModel", lastSignedIn.getValue());
     }
 }
