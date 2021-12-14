@@ -156,7 +156,9 @@ public class MainActivity extends BaseActivity implements ConversionListener {
         updates.put(Constants.KEY_FCM_TOKEN, FieldValue.delete());
         documentReference.update(updates)
                 .addOnSuccessListener(unused -> {
+                    String tempEmail = preferenceManager.getString(Constants.KEY_EMAIL);
                     preferenceManager.clear();
+                    preferenceManager.putString(Constants.KEY_EMAIL, tempEmail);
                     startActivity(new Intent(getApplicationContext(), SignInActivity.class));
                     finish();
                 })
