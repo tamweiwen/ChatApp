@@ -1,4 +1,3 @@
-
 package com.infinityandroid.chatapp.activities;
 
 import android.os.Bundle;
