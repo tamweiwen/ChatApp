@@ -29,8 +29,4 @@ public class SignInViewModel extends ViewModel {
         _lastSignedIn.setValue(email);
     }
 
-    @Override
-    protected void onCleared() {
-        super.onCleared();
-    }
 }
